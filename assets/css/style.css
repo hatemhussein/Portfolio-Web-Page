@@ -1,0 +1,626 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;500;600;700;800&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;500;600;700;800&family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,500&family=Shadows+Into+Light&display=swap');
+
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.container{
+    width: 75%;
+}
+.top{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.top i{
+    border-radius: 50%;
+    padding: 13px;
+    background-color: #ff724c;
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after,
+  .loader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #ff724c #ff724c;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  .loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #ff724c #ff724c transparent transparent;
+    animation: rotation 1.5s linear infinite;
+  }
+      
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+.loading{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 99999;
+    background-color: white;
+    width: 100%;
+}      
+.newBgColor{
+    background-color: #ededed;
+    box-shadow: 1px 2px 10px #222;
+}
+.navbar .navBtn{
+    background-color: #ff724c;
+}
+.navbar .nav-link{
+    color: #818181;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 15px;
+    position: relative;
+    padding: 10px 0;
+}
+.navbar .nav-link::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #ff724c;
+    transition: width .5s;
+}
+.navbar .nav-link .active{
+    color: #313335;
+}
+.navbar .nav-link:hover::after{
+    width: 100%;
+}
+.navbar .nav-link .active::after{
+    width: 100%;
+}
+
+.navBtn span{
+    font-size: 14px;
+}
+.navBtn i{
+    transition: .5s;
+}
+.navBtn:hover i{
+    background-color: #313335 !important;
+    color: white !important;
+    transform: rotate(360deg);
+}
+
+/* start header */
+header{
+    background-image: url(../images/headerImg.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.headerContent span{
+    color: #313335;
+    font-size: 23px;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+}
+.headerContent p{
+    color: #313335;
+    font-size: 23px;
+    font-weight: 500;
+    margin-left: auto;
+    font-family: 'Raleway', sans-serif;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid;
+    animation: typing 3s both infinite alternate-reverse steps(28), blink .7s infinite;
+}
+@keyframes typing {
+    from{
+        width: 0;
+    }
+    to{
+        width: 314px;
+    }
+}
+@keyframes blink{
+    from{
+        border-color: rgba(0, 0, 0, 0);
+    }
+    to{
+        border-color: rgba(0, 0, 0, 0.5);
+    }
+}
+h1{
+    font-size: 60px;
+    font-family: 'Dosis';
+}
+.social .icon i{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #3b5999;
+    border: 1px solid #3b5999;
+    cursor: pointer;
+    transition: transform 0.5s, background-color 0.5s;
+}
+.social .icon i:hover{
+    transform: rotate(360deg);
+    background-color: #3b5999;
+    color: white;
+}
+.social .icon:nth-child(2) i{
+    color: #ea4c89;
+    border-color: #ea4c89;
+}
+.social .icon:nth-child(2) i:hover{
+    background-color: #ea4c89;
+    color: white;
+}
+.social .icon:nth-child(3) i{
+    color: #1769ff;
+    border-color: #1769ff;
+}
+.social .icon:nth-child(3) i:hover{
+    background-color: #1769ff;
+    color: white;
+}
+.social .icon:nth-child(4) i{
+    color: #0077b5;
+    border-color: #0077b5;
+}
+.social .icon:nth-child(4) i:hover{
+    background-color: #0077b5;
+    color: white;
+}
+.social .icon:nth-child(5) i{
+    color: #dd4b39;
+    border-color: #dd4b39;
+}
+.social .icon:nth-child(5) i:hover{
+    background-color: #dd4b39;
+    color: white;
+}
+/* end header */
+
+/* start about */
+.about .container > .row{
+    width: 90%;
+    margin: auto;
+}
+.aboutContent{
+    background-color: #4e4e4e;
+}
+h2{
+    font-size: 50px;
+    font-family: 'Dosis';
+}
+.description{
+    background-color: #ff724c;
+}
+.about .title span{
+    position: absolute;
+    left: -10px;
+    top: -30px;
+}
+.about .description p{
+    font-size: 12.5px;
+    font-weight: 550;
+}
+.eyeIcon{
+    border-bottom-left-radius: 23px;
+    border-top-left-radius: 23px;
+    font-size: 13px;
+}
+.description a  span{
+    font-size: 13px;
+    font-weight: 550;
+    color: #4e4e4e;
+}
+.description a:hover i{
+    color: #ff724c !important;
+}
+/* end about */
+
+/* start service */
+.title span:not(.about .title span, .contact .title span){
+    border-color: #ff724c !important;
+}
+h3{
+    font-size: 18px;
+    color: #3b3b3b;
+}
+
+.serviceItem p{
+    font-size: 14px;
+    color: #818181;
+    font-weight: 450;
+}
+.serviceItem{
+    position: relative;
+}
+.serviceItem::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    right: 0;
+    left: 0;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    z-index: -1;
+    transition: .5s;
+}
+.serviceItem:hover::after {
+    bottom: 0;
+}
+/* end service */
+
+
+/* start portfolio */
+.portfolio{
+    background-color: #f3f3f3;
+}
+.portfolio .nav-link{
+    font-size: 14px;
+    color: #3b3b3b;
+    font-family: 'Raleway';
+}
+
+.portfolio .nav-link.active{
+    background-color: #ff724c;
+    color: white;
+}
+.portfolio .nav-link.active:hover{
+    border-color: #ff724c;
+}
+.portfolio .nav-link .all{
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.portfolio .nav-link{
+    margin-right: 15px;
+    border: 1px solid #5f5f5f;
+    padding: 5px 8px;
+    font-size: 13px;
+    font-weight: 450;
+}
+.portfolio .nav-link:hover{
+    border-color: #5f5f5f;
+}
+.overLay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    transform: scaleY(0);
+    transition: .5s ;
+}
+.overLay i{
+    color: white;
+    background-color: #ff724c;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.5s .2s;
+}
+.portfolioItem:hover .overLay{
+    transform: scaleY(1);
+}
+
+
+.portfolioItem:hover .overLay i{
+    transform: scale(1) rotate(360deg);
+}
+.overLay i:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    color: #ff724c;
+}
+.info{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    opacity: 0;
+    transition:.5s;
+}
+.portfolioItem:hover .info{
+    bottom: 0;
+    opacity: 1;
+}
+.info .description{
+    font-size: 14px;
+    color: #4c4c4c;
+}
+.info h3{
+    font-size: 15px;
+}
+.info i{
+    color: #ff724c;
+}
+
+/* start bio */
+.bio .head i{
+    width: 35px;
+    height: 35px;
+    background-color: #ff724c;
+    text-align: center;
+    color: #f3f3f3;
+    line-height: 35px;
+    border-radius: 50%;
+    font-size: 13px;
+}
+.bio .head i:hover{
+    background-color: #f3f3f3;
+    color: #ff724c;
+
+}
+h4, .item p{
+    font-size: 14px;
+    color: #3b3b3b;
+}
+.coloured{
+    color: #ff724c;
+    font-size: 14px;
+}
+.head{
+    position: relative;
+}
+.head::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2.2rem;
+    left: 18px;
+    height: 100%;
+    background-color: #313335;
+    width: 1px;
+
+}
+.bio .bioItem .desc .item{
+    position: relative;
+}
+.bio .bioItem .desc .item::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: -2px;
+    border-radius: 50%;
+    border: 1px solid #ff724c;
+    background-color: white;
+}
+.bio .bioItem .desc .item:hover::after{
+    background-color: #ff724c;
+}
+.bio .bioItem .desc .item:not(:last-of-type)::before{
+    content: '';
+    left: 2px;
+    position: absolute;
+
+    top: 0;
+    height: 100%;
+    width: 1px;
+    
+    background-color: #313335;
+}
+
+.bar{
+    background-color: #3b3b3b;
+    height: 6px;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+.bar::after{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 6px;
+    border-radius: 10px;
+    background-color: #ff724c;
+}
+.item[valu="55"] .bar::after{
+    width: 55%;
+}
+.item[valu="70"] .bar::after{
+    width: 70%;
+}
+.item[valu="80"] h4{
+    width: 80%;
+}
+.item[valu="70"] h4{
+    width: 70%;
+}
+.item[valu="55"] h4{
+    width: 55%;
+}
+/* end bio */
+
+
+/* start resume */
+.resume {
+    background-image: 
+    linear-gradient(rgba(59,59,59,.75), rgba(59,59,59,.75))
+    ,url(../images/brandbg.png);
+    background-size: cover;
+}
+.resume p{
+    font-size: 32px;
+    font-family: Dosis;
+    margin-bottom: 2rem;
+}
+.resume .btn{
+    border: 1px solid white;
+    color: white;
+    font-size: 13px;
+    
+}
+.resume .btn:hover{
+    background-color: #ff724c;
+    border-color: #ff724c;
+}
+/* end resume */
+
+/* start testimoials */
+.testimonials h3{
+    color: #313131;
+    font-family: 'Roboto';
+    font-size: 15px;
+    
+}
+.testimonials p{
+    color: #5b5b5b;
+    font-size: 14px;
+}
+.qoute span{
+    color: #5b5b5b;
+    font-size: 13px;
+    font-style: italic;
+}
+.qoute:hover{
+    background-color: #5b5b5b;
+    color: #f3f3f3;
+}
+.qoute:hover span{
+    color: #f3f3f3;
+}
+
+.carousel-indicators{
+    margin-bottom: 0;
+    bottom: -25px;
+
+}
+.carousel-indicators .active{
+    background-color: #ff724c;
+}
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ff724c;
+    border-radius: 50%;
+}
+/* end testimonials */
+
+
+/* start contact */
+.contact{
+    background-image: linear-gradient(rgba(255,114,76,.85),rgba(255,114,76,.85)),url(../images/contactbg.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.contact .container >p{
+    font-size: 15px;
+    width: 65%;
+    margin: auto;
+    font-weight: 400;
+}
+input:focus, textarea:focus{
+    box-shadow: none !important;
+    border: 1px solid #fff !important;
+}
+::placeholder{
+    color: white !important;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 450;
+}
+.contact a span{
+    color: #313131;
+    font-size: 13px;
+    font-weight: 550;
+}
+.contact .container a:hover i{
+    color: #ff724c !important;
+}
+
+/* start map */
+.map .contactInfo {
+    background-color: #282828;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.contactInfo i{
+    background-color: white;
+    color: #ff724c;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    transition:  .5s;
+}
+.contactInfo i:hover {
+    transform: rotate(360deg);
+    background-color: #ff724c;
+    color: white;
+}
+/* end map */
+
+
+/* start footer */
+footer p .copy{
+    color: #5f5f5f;
+    font-family: 'Raleway', 'sans serif';
+    font-size: 13px;
+    font-weight: 450;
+}
+footer p{
+    margin: 0;
+}
+footer p:last-of-type{
+    text-align: right;
+    color: #5f5f5f;
+    font-family: 'Raleway', 'sans serif';
+    font-size: 14px;
+    font-weight: 450;
+}
+/* end footer */
